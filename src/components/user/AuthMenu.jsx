@@ -1,10 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 export default function AuthMenu () {
     return (
         <div>
-        <ul>
-            <li><a href="">Sign up</a></li>
-            <li><a href="">Sign in</a></li>
-        </ul>
+           <NavLink to='/register'>Sign up</NavLink>
+           <NavLink to='/login'>Sign in</NavLink>
         </div>
-    )
+    );
 }

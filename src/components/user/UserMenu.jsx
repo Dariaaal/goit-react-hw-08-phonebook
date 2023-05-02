@@ -1,18 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import authSelectors from '../redux/auth/authSelectors';
-import { logOut } from '../redux/auth/authOperations';
+import authSelectors from 'redux/auth/auth-selectors';
+import * as authOperations from 'redux/auth/auth-operations';
 
 export default function UserMenu () {
 
     const dispatch = useDispatch();
-    const name = useSelector(authSelectors.getUserName);
+    const name = useSelector(authSelectors.getUsername);
     const email = useSelector(authSelectors.getUserEmail);
 
     return (
         <div>
-          <h2>User: {name}</h2>
-          <p>Email: {email}</p>
           <nav>
             <NavLink to="/">
               Homepage
@@ -21,9 +19,11 @@ export default function UserMenu () {
               My Contacts
             </NavLink>
           </nav>
-          <button onClick={() => dispatch(logOut())}>
+          <h2>User: {name}</h2>
+          <p>Email: {email}</p>
+          {/* <button onClick={() => dispatch(authOperations.logOut())}>
             SIGN OUT
-          </button>
+          </button> */}
         </div>
       ); 
 }
