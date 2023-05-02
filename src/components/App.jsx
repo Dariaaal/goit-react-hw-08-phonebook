@@ -1,6 +1,8 @@
 // import { Route, Routes } from 'react-router-dom';
 import Contacts from 'pages/Contacts';
-import Navigation from './user/Navigation'
+import Navigation from './user/Navigation';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
 // import Layout from './Layout';
 
 export default function App() {
@@ -19,7 +21,7 @@ export default function App() {
 
       <header><Navigation/></header>
 
-      <Contacts/>
+      <RegisterPage/>
 
       {/* <Routes>
         <Route path="/" element={<Layout/>}/>
