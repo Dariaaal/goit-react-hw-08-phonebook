@@ -21,7 +21,7 @@ export default function App() {
 
       <header><Navigation/></header>
 
-      <RegisterPage/>
+      <LoginPage/>
 
       {/* <Routes>
         <Route path="/" element={<Layout/>}/>
