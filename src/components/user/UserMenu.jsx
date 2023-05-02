@@ -19,11 +19,11 @@ export default function UserMenu () {
               My Contacts
             </NavLink>
           </nav>
-          <h2>User: {name}</h2>
+          <p>User: {name}</p>
           <p>Email: {email}</p>
-          {/* <button onClick={() => dispatch(authOperations.logOut())}>
+          <button onClick={() => dispatch(authOperations.logOut())}>
             SIGN OUT
-          </button> */}
+          </button>
         </div>
       ); 
 }
