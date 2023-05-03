@@ -1,36 +1,42 @@
 import { Route, Routes } from 'react-router-dom';
 import Contacts from 'pages/Contacts';
-import Navigation from './user/Navigation';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
 import HomePage from 'pages/HomePage';
 import Layout from './Layout';
+import PrivateRoute from './user/PrivateRoute';
+import PublicRoute from './user/PublicRoute';
 
 export default function App() {
 
     return (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: 40,
-            color: '#010101'
-          }}
-        >
-
-      <header><Navigation/></header>
-
-      <LoginPage/>
-
-      <Routes>
-        <Route path="/" element={<Layout/>}/>
-        <Route index element={<HomePage/>}/>
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/contacts' element={<Contacts/>}/>
-      </Routes>
-        </div>
-      );
+      <>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<HomePage/>} />
+            <Route
+              path="/register"
+              element={
+                <PublicRoute
+                  redirectTo="/contacts"
+                  component={<RegisterPage />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <PublicRoute redirectTo="/contacts" component={<LoginPage/>} />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Contacts/>} />
+              }
+            />
+          </Route>
+        </Routes>
+      </>
+    );
 }
