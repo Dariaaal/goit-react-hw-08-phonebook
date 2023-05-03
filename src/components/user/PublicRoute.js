@@ -6,13 +6,8 @@ export default function PublicRoute({
     component: Component,
     redirectTo,
     restricted = false,
-    ...routeProps
 }) {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
     const shouldRedirect = isLoggedIn && restricted;
-    return (
-        <Route {...routeProps}>
-            {shouldRedirect ? <Navigate to={redirectTo}/> : Component}
-        </Route>
-    );
+    return shouldRedirect ? <Navigate to={redirectTo}/> : Component
 }
