@@ -1,9 +1,10 @@
-// import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Contacts from 'pages/Contacts';
 import Navigation from './user/Navigation';
 import RegisterPage from 'pages/RegisterPage';
 import LoginPage from 'pages/LoginPage';
-// import Layout from './Layout';
+import HomePage from 'pages/HomePage';
+import Layout from './Layout';
 
 export default function App() {
 
@@ -23,11 +24,13 @@ export default function App() {
 
       <LoginPage/>
 
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Layout/>}/>
         <Route index element={<HomePage/>}/>
-        <Route path='movies' element={<Movies/>}/>
-      </Routes> */}
+        <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/contacts' element={<Contacts/>}/>
+      </Routes>
         </div>
       );
 }
