@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import css from "./CardForm.module.css";
+import { Button } from "@mui/material";
 
 export default function CardForm({onSubmit}) {
     const [name, setName] = useState('');
@@ -64,7 +65,7 @@ export default function CardForm({onSubmit}) {
                   required 
                   onChange={handleInputChange}
                 />
-            <button type="submit" className={css.button}>Add contact</button>
+                <Button variant="contained" type="submit">Add contact</Button>
           </form>
         );
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as authOperations from '../../redux/auth/auth-operations';
-import css from './RegisterPage.module.css'
+import css from './RegisterPage.module.css';
+import { Button } from "@mui/material";
 
 export default function RegisterPage () {
 
@@ -58,7 +59,7 @@ export default function RegisterPage () {
                 onChange={handleChange}
                 />
             </label>
-            <button type="submit" className={css.button}>Register</button>
+            <Button type="submit" variant="contained">Register</Button>
             </form>
         </div>
     )

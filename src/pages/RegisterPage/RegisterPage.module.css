@@ -1,7 +1,5 @@
 form{
     display: flex;
-    /* flex-direction: column; */
-    /* border: 1px solid black; */
     padding: 20px;
     align-items: center;
     justify-content: center;
@@ -12,20 +10,6 @@ input{
     width: 200px;
     margin-right: 20px;
     margin-left: 20px;
-}
-
-.button{
-    padding: 5px;
-    width: 100px;
-    font-weight: 600;
-    background-color: rgb(168, 202, 241);
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-}
-
-.button:hover{
-    background-color: rgb(64, 139, 199);
 }
 
 .label{

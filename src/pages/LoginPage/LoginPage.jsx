@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as authOperations from '../../redux/auth/auth-operations';
-import css from './LoginPage.module.css'
+import css from './LoginPage.module.css';
+import { Button } from "@mui/material";
 
 export default function LoginPage () {
 
@@ -46,7 +47,7 @@ export default function LoginPage () {
                 onChange={handleChange}
                 />
             </label>
-            <button type="submit" className={css.button}>Log in</button>
+            <Button type="submit" variant="contained">Log in</Button>
             </form>
         </div>
     )

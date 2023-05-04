@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import authSelectors from 'redux/auth/auth-selectors';
 import * as authOperations from 'redux/auth/auth-operations';
-import css from './UserMenu.module.css'
+import css from './UserMenu.module.css';
+import { Button } from "@mui/material";
 
 export default function UserMenu () {
 
@@ -12,17 +13,16 @@ export default function UserMenu () {
     return (
         <div className={css.user}>
           <nav className={css.nav}>
-            <p><NavLink to="/homepage" className={css.link}>
-              Homepage
+            <p><NavLink to="/homepage">
+            <Button variant="outlined">Homepage</Button>
             </NavLink></p>
-            <p><NavLink to="/contacts" className={css.link}>
-              My Contacts
+            <p><NavLink to="/contacts">
+            <Button variant="outlined">My contacts</Button>
             </NavLink></p>
           </nav>
           <p className={css.email}>{email}</p>
-          <NavLink to="/"><button onClick={() => dispatch(authOperations.logOut())} className={css.button}>
-            SIGN OUT
-          </button>
+          <NavLink to="/">
+          <Button type="submit" variant="contained" onClick={() => dispatch(authOperations.logOut())}>Sign out</Button>
           </NavLink>
         </div>
       ); 
