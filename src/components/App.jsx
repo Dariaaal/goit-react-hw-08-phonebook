@@ -22,10 +22,9 @@ export default function App() {
   }, [dispatch]);
 
  
-    // return isRefreshing ? (
-    //     <b>Refreshing user...</b>
-    //   ) :
-    return (
+    return isRefreshing ? (
+        <b>Refreshing user...</b>
+      ) : (
       <div
       style={{
         display: 'flex',
