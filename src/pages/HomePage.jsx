@@ -4,7 +4,7 @@ import authSelectors from 'redux/auth/auth-selectors';
 
 export default function HomePage () {
     const name = useSelector(authSelectors.getUsername);
-    <div>
+    return <div>
         <h1>Hello, {name}!</h1>
     </div>
 };

@@ -22,9 +22,10 @@ export default function App() {
   }, [dispatch]);
 
  
-    return isRefreshing ? (
-        <b>Refreshing user...</b>
-      ) :(
+    // return isRefreshing ? (
+    //     <b>Refreshing user...</b>
+    //   ) :
+    return (
       <div
       style={{
         display: 'flex',
@@ -38,7 +39,7 @@ export default function App() {
 
           <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route index element={<HomePage/>} />
+            <Route path="/homepage" element={<HomePage/>} />
             <Route
               path="/register"
               element={
