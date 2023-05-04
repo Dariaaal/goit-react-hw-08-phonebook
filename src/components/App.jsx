@@ -1,10 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import Contacts from 'pages/Contacts';
-// import RegisterPage from 'pages/RegisterPage';
-// import LoginPage from 'pages/LoginPage';
-// import HomePage from 'pages/HomePage';
 import Layout from './Layout';
 import PrivateRoute from './user/PrivateRoute';
 import PublicRoute from './user/PublicRoute';
