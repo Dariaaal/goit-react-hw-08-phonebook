@@ -30,13 +30,14 @@ export default function LoginPage () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} autoComplete="off">
+            <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
             <label className={css.label}>
                 Email
                 <input type="email"
                 name="email"
                 value={email}
                 onChange={handleChange}
+                className={css.input}
                 />
             </label>
             <label className={css.label}>
@@ -45,6 +46,7 @@ export default function LoginPage () {
                 name="password"
                 value={password}
                 onChange={handleChange}
+                className={css.input}
                 />
             </label>
             <Button type="submit" variant="contained">Log in</Button>

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../redux/contacts/filterReducer";
 import * as contactsOperations from "../redux/contacts/contactsOperations";
 import * as contactsSelectors from "../redux/contacts/contactsSelectors";
+import { Card } from "@mui/material";
 
 export default function Contacts() {
     
@@ -60,7 +61,7 @@ export default function Contacts() {
           }}
         >
 
-        <CardForm onSubmit={formSubmitHandler}/>
+        <Card variant="outlined"><CardForm onSubmit={formSubmitHandler}/></Card>
         <h2>Contacts</h2>
         <Filter filter={filter} onChangeFilter={changeFilter}/>
         <CardList contacts={visibleContacts} onDeleteContact={onDeleteContact}/>

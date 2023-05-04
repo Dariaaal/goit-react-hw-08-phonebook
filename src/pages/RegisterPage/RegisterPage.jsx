@@ -34,13 +34,14 @@ export default function RegisterPage () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} autoComplete="off">
+            <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
             <label className={css.label}>
                 Name
                 <input type="text"
                 name="name"
                 value={name}
                 onChange={handleChange}
+                className={css.input}
                 />
             </label>
             <label className={css.label}>
@@ -49,6 +50,7 @@ export default function RegisterPage () {
                 name="email"
                 value={email}
                 onChange={handleChange}
+                className={css.input}
                 />
             </label>
             <label className={css.label}>
@@ -57,6 +59,7 @@ export default function RegisterPage () {
                 name="password"
                 value={password}
                 onChange={handleChange}
+                className={css.input}
                 />
             </label>
             <Button type="submit" variant="contained">Register</Button>

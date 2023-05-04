@@ -1,11 +1,10 @@
-form{
+.form{
     display: flex;
-    padding: 20px;
     align-items: center;
     justify-content: center;
 }
 
-input{
+.input{
     padding: 5px;
     width: 200px;
     margin-right: 20px;
