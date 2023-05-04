@@ -1,25 +1,35 @@
 import { Route, Routes } from 'react-router-dom';
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import Contacts from 'pages/Contacts';
-import RegisterPage from 'pages/RegisterPage';
-import LoginPage from 'pages/LoginPage';
-import HomePage from 'pages/HomePage';
+import React, { useState, useEffect, lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import Contacts from 'pages/Contacts';
+// import RegisterPage from 'pages/RegisterPage';
+// import LoginPage from 'pages/LoginPage';
+// import HomePage from 'pages/HomePage';
 import Layout from './Layout';
 import PrivateRoute from './user/PrivateRoute';
 import PublicRoute from './user/PublicRoute';
-import Navigation from './user/Navigation';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
+import authSelectors from 'redux/auth/auth-selectors';
+
+const HomePage = lazy(() => import('pages/HomePage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const Contacts = lazy(() => import('pages/Contacts'));
 
 export default function App() {
 
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(authSelectors.getIsRefreshing);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-    return (
+ 
+    return isRefreshing ? (
+        <b>Refreshing user...</b>
+      ) :(
       <div
       style={{
         display: 'flex',
@@ -30,8 +40,6 @@ export default function App() {
         color: '#010101'
       }}
     >
-
-  <header><Navigation/></header>
 
           <Routes>
           <Route path="/" element={<Layout/>}>

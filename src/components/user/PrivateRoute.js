@@ -7,6 +7,8 @@ export default function PrivateRoute({
     redirectTo,
 }) {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-    return isLoggedIn ? Component : <Navigate to={redirectTo}/>
-}
+    const isRefreshing = useSelector(authSelectors.getIsRefreshing);
+    const shouldRedirect = !isLoggedIn && !isRefreshing;
+    return shouldRedirect ? <Navigate to={redirectTo}/> : Component;
+};
 
