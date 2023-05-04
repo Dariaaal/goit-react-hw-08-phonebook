@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import React, { useState, useEffect, lazy } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Layout from './Layout';
 import PrivateRoute from './user/PrivateRoute';
@@ -16,7 +16,6 @@ export default function App() {
 
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.getIsRefreshing);
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 
   useEffect(() => {
     dispatch(fetchCurrentUser());

@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as authOperations from '../redux/auth/auth-operations';
-import authSelectors from "redux/auth/auth-selectors";
 
 export default function LoginPage () {
 
