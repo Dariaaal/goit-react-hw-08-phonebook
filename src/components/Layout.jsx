@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Navigation from './user/Navigation';
+import Navigation from './user/Navigation/Navigation';
 
 export default function Layout() {
   return (

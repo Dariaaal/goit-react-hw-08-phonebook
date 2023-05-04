@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import * as authOperations from '../redux/auth/auth-operations';
+import * as authOperations from '../../redux/auth/auth-operations';
+import css from './LoginPage.module.css'
 
 export default function LoginPage () {
 
@@ -29,7 +30,7 @@ export default function LoginPage () {
     return (
         <div>
             <form onSubmit={handleSubmit} autoComplete="off">
-            <label>
+            <label className={css.label}>
                 Email
                 <input type="email"
                 name="email"
@@ -37,7 +38,7 @@ export default function LoginPage () {
                 onChange={handleChange}
                 />
             </label>
-            <label>
+            <label className={css.label}>
                 Password
                 <input type="password"
                 name="password"
@@ -45,7 +46,7 @@ export default function LoginPage () {
                 onChange={handleChange}
                 />
             </label>
-            <button type="submit">Log in</button>
+            <button type="submit" className={css.button}>Log in</button>
             </form>
         </div>
     )

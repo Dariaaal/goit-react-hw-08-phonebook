@@ -7,9 +7,9 @@ import PublicRoute from './user/PublicRoute';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import authSelectors from 'redux/auth/auth-selectors';
 
-const HomePage = lazy(() => import('pages/HomePage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
-const LoginPage = lazy(() => import('pages/LoginPage'));
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 const Contacts = lazy(() => import('pages/Contacts'));
 
 export default function App() {
@@ -25,16 +25,16 @@ export default function App() {
     return isRefreshing ? (
         <b>Refreshing user...</b>
       ) : (
-      <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    //   <div
+    //   style={{
+    //     display: 'flex',
+    //     flexDirection: 'column',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     fontSize: 40,
+    //     color: '#010101'
+    //   }}
+    // >
 
           <Routes>
           <Route path="/" element={<Layout/>}>
@@ -62,7 +62,7 @@ export default function App() {
             />
           </Route>
         </Routes>
-    </div>
+    // </div>
     );
 }
 

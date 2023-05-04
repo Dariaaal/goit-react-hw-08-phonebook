@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import authSelectors from 'redux/auth/auth-selectors';
 import * as authOperations from 'redux/auth/auth-operations';
+import css from './UserMenu.module.css'
 
 export default function UserMenu () {
 
@@ -9,17 +10,17 @@ export default function UserMenu () {
     const email = useSelector(authSelectors.getUserEmail);
 
     return (
-        <div>
-          <nav>
-            <NavLink to="/homepage">
+        <div className={css.user}>
+          <nav className={css.nav}>
+            <p><NavLink to="/homepage" className={css.link}>
               Homepage
-            </NavLink>
-            <NavLink to="/contacts">
+            </NavLink></p>
+            <p><NavLink to="/contacts" className={css.link}>
               My Contacts
-            </NavLink>
+            </NavLink></p>
           </nav>
-          <p>{email}</p>
-          <NavLink to="/"><button onClick={() => dispatch(authOperations.logOut())}>
+          <p className={css.email}>{email}</p>
+          <NavLink to="/"><button onClick={() => dispatch(authOperations.logOut())} className={css.button}>
             SIGN OUT
           </button>
           </NavLink>
