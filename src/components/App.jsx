@@ -25,17 +25,6 @@ export default function App() {
     return isRefreshing ? (
         <b>Refreshing user...</b>
       ) : (
-    //   <div
-    //   style={{
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     fontSize: 40,
-    //     color: '#010101'
-    //   }}
-    // >
-
           <Routes>
           <Route path="/" element={<Layout/>}>
             <Route path="/homepage" element={<HomePage/>} />
@@ -62,7 +51,6 @@ export default function App() {
             />
           </Route>
         </Routes>
-    // </div>
     );
 }
 

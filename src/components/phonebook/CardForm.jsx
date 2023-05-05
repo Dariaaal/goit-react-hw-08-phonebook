@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { nanoid } from "nanoid";
 import css from "./CardForm.module.css";
 import { Button, TextField } from "@mui/material";
 
 export default function CardForm({onSubmit}) {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
-
-    const nameInputId = nanoid();
-    const numberInputId = nanoid();
 
     const fields = {name, number};
 
