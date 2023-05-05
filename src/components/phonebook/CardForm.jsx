@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import css from "./CardForm.module.css";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 export default function CardForm({onSubmit}) {
     const [name, setName] = useState('');
@@ -39,33 +39,23 @@ export default function CardForm({onSubmit}) {
 
         return (
             <form onSubmit={handleSubmit} className={css.card}>
-            <label htmlFor={nameInputId} className={css.label}>
-              Name
-              </label>
-                <input
+                <TextField
                   type="text"
-                  id={nameInputId}
                   name="name"
                   value={name}
                   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                  required
                   onChange={handleInputChange}
-                  className={css.field}
+                  label="Name"
                 />
-            <label htmlFor={numberInputId} className={css.label}>
-              Number
-            </label>
-                <input 
+                <TextField 
                   type="tel"
-                  id={numberInputId} 
                   name="number"
                   value={number}
                   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                  required 
                   onChange={handleInputChange}
-                  className={css.field}
+                  label="Number"
                 />
                 <Button variant="contained" type="submit">Add contact</Button>
           </form>

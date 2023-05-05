@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as authOperations from '../../redux/auth/auth-operations';
 import css from './RegisterPage.module.css';
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 export default function RegisterPage () {
 
@@ -35,33 +35,24 @@ export default function RegisterPage () {
     return (
         <div>
             <form onSubmit={handleSubmit} autoComplete="off" className={css.form}>
-            <label className={css.label}>
-                Name
-                <input type="text"
+                <TextField type="text"
                 name="name"
                 value={name}
                 onChange={handleChange}
-                className={css.input}
+                label="Name"
                 />
-            </label>
-            <label className={css.label}>
-                Email
-                <input type="email"
+                <TextField type="email"
                 name="email"
                 value={email}
                 onChange={handleChange}
-                className={css.input}
+                label="Email"
                 />
-            </label>
-            <label className={css.label}>
-                Password
-                <input type="password"
+                <TextField type="password"
                 name="password"
                 value={password}
                 onChange={handleChange}
-                className={css.input}
+                label="Password"
                 />
-            </label>
             <Button type="submit" variant="contained">Register</Button>
             </form>
         </div>
