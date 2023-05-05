@@ -38,7 +38,7 @@ export default function CardForm({onSubmit}) {
     }
 
         return (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={css.card}>
             <label htmlFor={nameInputId} className={css.label}>
               Name
               </label>
@@ -51,6 +51,7 @@ export default function CardForm({onSubmit}) {
                   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                   required
                   onChange={handleInputChange}
+                  className={css.field}
                 />
             <label htmlFor={numberInputId} className={css.label}>
               Number
@@ -64,6 +65,7 @@ export default function CardForm({onSubmit}) {
                   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                   required 
                   onChange={handleInputChange}
+                  className={css.field}
                 />
                 <Button variant="contained" type="submit">Add contact</Button>
           </form>

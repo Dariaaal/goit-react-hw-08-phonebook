@@ -7,7 +7,7 @@ const filterInputId = nanoid();
 const Filter = ({filter, onChangeFilter}) => (
     <div className={css.filter}>
         <label htmlFor={filterInputId}>Find contacts by name</label>
-        <input type="text" id={filterInputId} value={filter} onChange={onChangeFilter}/>
+        <input type="text" id={filterInputId} value={filter} onChange={onChangeFilter} className={css.search}/>
     </div>
 )
 
